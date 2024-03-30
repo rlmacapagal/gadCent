@@ -1,55 +1,7 @@
 {% if section.settings.show_announcement %}
   <section>
     <div class="announcement-bar">
-      <div class="announcement-bar-left-section">
-        {% if section.settings.image != blank %}
-          <img
-            width="100"
-            height="100"
-            src="{{ section.settings.image | image_url }}"
-            alt="announcement bar image">
-
-        {% else %}
-          <img
-            width="100"
-            height="100"
-            loading="lazy"
-            src="{{ 'logo.jpg' | asset_url }}">
-
-        {% endif %}
-
-      </div>
-
-      <div class="announcement-bar-right-section">
-        <ul class="announcement-bar-inner-list">
-          {% if section.blocks.size == 0 %}
-            <li>
-              <a href="#">Help</a>
-            </li>
-
-            {% if shop.customer_accounts_enabled %}
-              {% if customer %}
-                <li>
-                  <a href="/account">Account</a>
-
-                </li>
-
-              {% else %}
-                <li>
-                  <a href="/account/login">Sign in</a>
-                </li>
-              {% endif %}
-            {% endif %}
-
-          {% else %}
-            {% for block in section.blocks %}
-              <li>
-                <a href="{{ block.settings.link }}">{{ block.settings.text | escape }}</a>
-              </li>
-            {% endfor %}
-          {% endif %}
-        </ul>
-      </div>
+      Hey
     </div>
   </section>
 

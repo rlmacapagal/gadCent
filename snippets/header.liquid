@@ -17,6 +17,34 @@
         loading="lazy"
         src="{{ 'd.png' | asset_url }}">
     </a>
+
+    {% if section.blocks.size == 0 %}
+      <li>
+        <a href="#">Help</a>
+      </li>
+
+      {% if shop.customer_accounts_enabled %}
+        {% if customer %}
+          <li>
+            <a href="/account">Account</a>
+
+          </li>
+
+        {% else %}
+          <li>
+            <a href="/account/login">Sign in</a>
+          </li>
+        {% endif %}
+      {% endif %}
+
+    {% else %}
+      {% for block in section.blocks %}
+        <li>
+          <a href="{{ block.settings.link }}">{{ block.settings.text | escape }}</a>
+        </li>
+      {% endfor %}
+    {% endif %}
+
   </div>
 
 </header>
